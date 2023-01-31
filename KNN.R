@@ -1,5 +1,5 @@
 library(class)
-#library(caret)
+
 data=read.csv("C:/Projects/R Projects/rice_classification.csv")
 data = subset(data,select=-id)
 data$Class = factor(data$Class)
@@ -8,8 +8,6 @@ acc = function(x)
 {sum(diag(x))/sum(x)}
 
 nor <- function(x) { (x - min(x)) / (max(x) - min(x)) }
-
-#set.seed(2022)
 
 result <- vector()
 listk <- c(1,2,3,4,5,6,7,8)
