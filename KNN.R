@@ -1,6 +1,6 @@
 library(class)
 
-data=read.csv("C:/Projects/R Projects/rice_classification.csv")
+data=read.csv("C:/Projects/R Projects/data.csv")
 data = subset(data,select=-id)
 data$Class = factor(data$Class)
 

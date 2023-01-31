@@ -1,11 +1,11 @@
 library("party")
 res = c()
 
-data=read.csv("C:/Projects/R Projects/rice_classification.csv")
+data=read.csv("C:/Projects/R Projects/data.csv")
 data = subset(data,select=-id)
 data$Class = factor(data$Class)
 
-for(i in 1:100) {
+for(i in 1:20) {
   idx=sample(1:nrow(data),0.8*nrow(data))
   
   train = data[idx,]
