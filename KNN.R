@@ -41,7 +41,7 @@ for(k in 1:length(listk)){
   cat(k, "Srednia arytmetyczna:", mean(result))
   cat(" Odchylenie Standardowe:", sd(result), "\n")
   
-  odchyleniaOdK = c(odchyleniaOdK, sd(result)) # e 
+  odchyleniaOdK = c(odchyleniaOdK, sd(result))
 }
 
 print(tab)
