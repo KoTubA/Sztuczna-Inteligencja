@@ -2,9 +2,9 @@ library(naivebayes)
 
 data=read.csv("C:/Projects/R Projects/data.csv")
 data = subset(data,select=-id)
-data$Class = factor(data$Class)
+data$Grade = factor(data$Grade)
 
-xtabs(~ Class, data=data)
+xtabs(~ Grade, data=data)
 
 myList <- list()
 for (x in 1:100) {
@@ -14,17 +14,17 @@ for (x in 1:100) {
   train=data[idx==1,]
   test=data[idx==2,]
   
-  model=naive_bayes(Class ~ .,data=train)
+  model=naive_bayes(Grade ~ .,data=train)
   plot(model)
   
   p=predict(model,train)
-  tab=table(p,train$Class)
+  tab=table(p,train$Grade)
   tab
   sum(diag(tab))/sum(tab)
   
 
   p1=predict(model,test)
-  tab1=table(p1,test$Class)
+  tab1=table(p1,test$Grade)
   tab1
   s = sum(diag(tab1))/sum(tab1)
   
